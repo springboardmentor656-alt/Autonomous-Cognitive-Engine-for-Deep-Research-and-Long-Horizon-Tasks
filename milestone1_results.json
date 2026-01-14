@@ -1,0 +1,267 @@
+{
+  "summary": {
+    "passed": 10,
+    "total": 10,
+    "success_rate": 1.0,
+    "average_score": 1.0
+  },
+  "results": [
+    {
+      "test_id": "retirement_1",
+      "category": "Retirement Planning",
+      "todos_generated": 5,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 1.0,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Gather current financial snapshot (income, expenses, debt, savings)",
+        "Calculate total student loan debt and monthly payment obligations",
+        "Estimate retirement savings goal based on age and target retirement age",
+        "Analyze optimal debt payoff vs retirement savings strategy",
+        "Create action plan with specific monthly allocation recommendations for debt repayment and retirement savings"
+      ]
+    },
+    {
+      "test_id": "emergency_fund_1",
+      "category": "Emergency Fund",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.5,
+          "is_relevant": true,
+          "relevance_ratio": 0.6666666666666666
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Determine ideal emergency fund size based on monthly expenses and income stability",
+        "Calculate monthly savings capacity by subtracting expenses from income",
+        "Set realistic savings goals and timeline for building the emergency fund",
+        "Choose a suitable savings vehicle, such as a high-yield savings account",
+        "Automate monthly transfers from checking to savings account",
+        "Monitor progress and adjust savings rate as needed to stay on track"
+      ]
+    },
+    {
+      "test_id": "investment_1",
+      "category": "Investment Strategy",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.5,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Assess current 401(k) portfolio and risk tolerance",
+        "Determine target asset allocation based on age and retirement goals",
+        "Evaluate the need for diversification beyond stocks",
+        "Consider consulting a financial advisor for personalized guidance",
+        "Rebalance portfolio if necessary to achieve target asset allocation",
+        "Monitor and adjust portfolio periodically to maintain optimal asset allocation"
+      ]
+    },
+    {
+      "test_id": "debt_payoff_1",
+      "category": "Debt Management",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.6666666666666666,
+          "is_relevant": true,
+          "relevance_ratio": 0.5
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Gather current credit card balances and APRs",
+        "Calculate total monthly payment obligation",
+        "Determine optimal debt payoff strategy using debt avalanche or debt snowball method",
+        "Allocate $800 monthly payment across credit cards to maximize interest savings",
+        "Create action plan with specific monthly payment recommendations for each credit card",
+        "Monitor progress and adjust strategy as needed"
+      ]
+    },
+    {
+      "test_id": "home_buying_1",
+      "category": "Home Buying",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.5,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Determine current monthly expenses and create a budget to identify areas for cost reduction",
+        "Calculate how much we need to save each month for the next 2 years to reach the required down payment for a $350,000 home",
+        "Research and explore mortgage options and potential interest rates",
+        "Consider factors such as credit score, property taxes, and insurance costs when calculating the total cost of homeownership",
+        "Create a plan to increase income or reduce high-interest debt to improve our financial situation",
+        "Investigate first-time homebuyer programs and other potential sources of financial assistance"
+      ]
+    },
+    {
+      "test_id": "college_savings_1",
+      "category": "Education Planning",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.8333333333333334,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Determine current financial situation and available monthly savings",
+        "Research and compare different 529 plan options",
+        "Calculate estimated college costs based on current trends and child's age",
+        "Determine appropriate monthly savings amount based on estimated college costs and time horizon",
+        "Consider other college savings options, such as prepaid tuition plans or custodial accounts",
+        "Create a long-term college savings plan with regular contribution schedule"
+      ]
+    },
+    {
+      "test_id": "budget_1",
+      "category": "Budgeting",
+      "todos_generated": 5,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.8,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Track daily expenses for one month to identify areas of overspending",
+        "Categorize expenses into needs (housing, food, utilities) and wants (entertainment, hobbies)",
+        "Calculate total monthly fixed expenses (rent, utilities, minimum debt payments)",
+        "Determine discretionary income and allocate 50-30-20 (necessities, savings, discretionary spending)",
+        "Create a personalized budget plan with specific expense reduction and savings strategies"
+      ]
+    },
+    {
+      "test_id": "insurance_1",
+      "category": "Insurance Planning",
+      "todos_generated": 5,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 1.0,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Determine income replacement needs in the event of passing",
+        "Calculate outstanding debt and financial obligations",
+        "Assess dependents' financial needs, including child's education expenses",
+        "Research and compare term life insurance and permanent life insurance options",
+        "Evaluate spousal income and ability to maintain current lifestyle without your income"
+      ]
+    },
+    {
+      "test_id": "career_change_1",
+      "category": "Career Transition",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 1.0,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Calculate current monthly expenses to determine essential spending",
+        "Determine required emergency fund size based on new salary",
+        "Estimate new monthly income after 20% pay cut",
+        "Assess potential impact on long-term financial goals, such as retirement savings",
+        "Create a budget plan to adjust spending and allocate $15,000 in savings for transition support",
+        "Evaluate potential for future salary growth in the new career"
+      ]
+    },
+    {
+      "test_id": "tax_optimization_1",
+      "category": "Tax Planning",
+      "todos_generated": 6,
+      "evaluation": {
+        "score": 3.0,
+        "total_points": 3,
+        "checks": {
+          "has_enough_tasks": true,
+          "is_specific": true,
+          "specificity_ratio": 0.5,
+          "is_relevant": true,
+          "relevance_ratio": 1.0
+        },
+        "final_score": 1.0,
+        "passed": true
+      },
+      "todos": [
+        "Gather current financial documents including business income, expenses, and tax returns",
+        "Calculate self-employment tax liability and identify potential deductions",
+        "Research and explore business entity structures to minimize tax burden (e.g. S-Corp, LLC)",
+        "Analyze home office deduction and other business use of personal assets",
+        "Investigate retirement plan options for self-employed individuals (e.g. SEP-IRA, Solo 401(k))",
+        "Consult with a tax professional to implement optimized tax strategies"
+      ]
+    }
+  ]
+}
