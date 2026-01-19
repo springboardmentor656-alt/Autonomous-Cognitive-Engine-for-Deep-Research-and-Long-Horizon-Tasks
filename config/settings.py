@@ -11,7 +11,7 @@ class Settings:
     LANGCHAIN_ENDPOINT = os.getenv("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com")
     LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
     LANGCHAIN_PROJECT = os.getenv("LANGCHAIN_PROJECT", "financial-planning-agent")
-    PROMPT_STYLE: str = "structured"
+    PROMPT_STYLE: str = os.getenv("PROMPT_STYLE", "default") 
     
 
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")

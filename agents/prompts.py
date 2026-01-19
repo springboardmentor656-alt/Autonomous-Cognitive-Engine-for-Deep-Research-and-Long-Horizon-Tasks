@@ -103,9 +103,46 @@ Your response:
 Be specific and focus on financial planning best practices!
 """
 
-def get_prompt(style: str = "structured"):
-    """Get the appropriate prompt based on style"""
-    if style == "structured":
+MILESTONE_2_PROMPT = """
+You are a financial planning expert with memory.
+
+User request: {request}
+
+Your job:
+1. Break the request into 3–7 clear tasks
+2. Create detailed file contents for:
+   - Income summary
+   - Expense breakdown
+   - Savings strategy
+3. Each file must contain:
+   - Bullet points
+   - Numbers or estimates
+   - Actionable insights
+
+Example:
+
+"expenses.txt":
+Monthly Expenses:
+- Rent: ₹15,000
+- Food: ₹6,000
+- Transport: ₹2,000
+Total: ₹23,000
+
+Output format:
+- tasks: list of steps
+- files_to_create: {filename: FULL CONTENT}
+- reasoning: explanation
+"""
+
+
+def get_prompt(style: str = "structured", milestone: int = 1):
+    if milestone == 1:
         return MILESTONE_1_PROMPT
-    else:
-        return MILESTONE_1_PROMPT 
+
+    elif milestone == 2:
+        return MILESTONE_2_PROMPT
+
+    elif milestone == 3:
+        return FINANCIAL_PLANNER_SYSTEM_PROMPT
+
+    return MILESTONE_1_PROMPT

@@ -1,6 +1,7 @@
 from langchain_core.tools import tool
 from typing import List
 from pydantic import BaseModel, Field
+from typing import Union
 
 class WriteTodosInput(BaseModel):
     """Input schema for write_todos tool"""
@@ -47,12 +48,13 @@ def write_todos(tasks: List[str]) -> str:
 
 class UpdateTodoInput(BaseModel):
     """Input schema for update_todo_status tool"""
-    todo_id: int = Field(description="The ID of the task to update")
+    todo_id: Union[int, str] = Field(description="The ID of the task to update")
     status: str = Field(description="New status: pending, in_progress, completed, or failed")
     result: str = Field(default="", description="Optional result description if task is completed")
 
 @tool(args_schema=UpdateTodoInput)
-def update_todo_status(todo_id: int, status: str, result: str = "") -> str:
+def update_todo_status(todo_id, status: str, result: str = "") -> str:
+    todo_id = int(todo_id)
     """
     Update the status of a specific TODO task.
     
