@@ -77,9 +77,9 @@
       "todos": [
         "Assess current 401(k) portfolio and risk tolerance",
         "Determine target asset allocation based on age and retirement goals",
-        "Evaluate the need for diversification beyond stocks",
+        "Evaluate potential tax implications of rebalancing",
         "Consider consulting a financial advisor for personalized guidance",
-        "Rebalance portfolio if necessary to achieve target asset allocation",
+        "Rebalance portfolio to target allocation if necessary",
         "Monitor and adjust portfolio periodically to maintain optimal asset allocation"
       ]
     },
@@ -103,7 +103,7 @@
       "todos": [
         "Gather current credit card balances and APRs",
         "Calculate total monthly payment obligation",
-        "Determine optimal debt payoff strategy using debt avalanche or debt snowball method",
+        "Determine optimal debt payoff strategy (debt avalanche or debt snowball)",
         "Allocate $800 monthly payment across credit cards to maximize interest savings",
         "Create action plan with specific monthly payment recommendations for each credit card",
         "Monitor progress and adjust strategy as needed"
@@ -131,8 +131,8 @@
         "Calculate how much we need to save each month for the next 2 years to reach the required down payment for a $350,000 home",
         "Research and explore mortgage options and potential interest rates",
         "Consider factors such as credit score, property taxes, and insurance costs when calculating the total cost of homeownership",
-        "Create a plan to increase income or reduce high-interest debt to improve our financial situation",
-        "Investigate first-time homebuyer programs and other potential sources of financial assistance"
+        "Create a plan to increase income or reduce expenses in order to save the required amount",
+        "Investigate first-time homebuyer programs and other potential financial assistance opportunities"
       ]
     },
     {
@@ -157,21 +157,21 @@
         "Research and compare different 529 plan options",
         "Calculate estimated college costs based on current trends and child's age",
         "Determine appropriate monthly savings amount based on estimated college costs and time horizon",
-        "Consider other college savings options, such as prepaid tuition plans or custodial accounts",
+        "Consider other college savings options, such as prepaid tuition plans or Coverdell ESAs",
         "Create a long-term college savings plan with regular contribution schedule"
       ]
     },
     {
       "test_id": "budget_1",
       "category": "Budgeting",
-      "todos_generated": 5,
+      "todos_generated": 6,
       "evaluation": {
         "score": 3.0,
         "total_points": 3,
         "checks": {
           "has_enough_tasks": true,
           "is_specific": true,
-          "specificity_ratio": 0.8,
+          "specificity_ratio": 0.6666666666666666,
           "is_relevant": true,
           "relevance_ratio": 1.0
         },
@@ -182,21 +182,22 @@
         "Track daily expenses for one month to identify areas of overspending",
         "Categorize expenses into needs (housing, food, utilities) and wants (entertainment, hobbies)",
         "Calculate total monthly fixed expenses (rent, utilities, minimum debt payments)",
-        "Determine discretionary income and allocate 50-30-20 (necessities, savings, discretionary spending)",
-        "Create a personalized budget plan with specific expense reduction and savings strategies"
+        "Determine disposable income and allocate 50-30-20 (necessities, savings, discretionary spending)",
+        "Create a personalized budget plan with specific expense reduction strategies",
+        "Set up automatic savings transfers to ensure consistent saving"
       ]
     },
     {
       "test_id": "insurance_1",
       "category": "Insurance Planning",
-      "todos_generated": 5,
+      "todos_generated": 6,
       "evaluation": {
         "score": 3.0,
         "total_points": 3,
         "checks": {
           "has_enough_tasks": true,
           "is_specific": true,
-          "specificity_ratio": 1.0,
+          "specificity_ratio": 0.8333333333333334,
           "is_relevant": true,
           "relevance_ratio": 1.0
         },
@@ -204,11 +205,12 @@
         "passed": true
       },
       "todos": [
-        "Determine income replacement needs in the event of passing",
-        "Calculate outstanding debt and financial obligations",
-        "Assess dependents' financial needs, including child's education expenses",
-        "Research and compare term life insurance and permanent life insurance options",
-        "Evaluate spousal income and ability to maintain current lifestyle without your income"
+        "Determine income replacement needs in the event of passing, considering current income, expenses, and dependents",
+        "Calculate outstanding debt, including mortgage, loans, and credit cards, to ensure sufficient coverage for debt repayment",
+        "Assess current assets, such as savings and investments, to determine the amount of life insurance needed to supplement them",
+        "Evaluate spouse's income and ability to support the family in the event of passing",
+        "Research and compare different types of life insurance policies, including term life, whole life, and universal life, to determine the most suitable option",
+        "Consider additional factors, such as funeral expenses and future education costs for the child, when determining coverage amount"
       ]
     },
     {
@@ -229,12 +231,12 @@
         "passed": true
       },
       "todos": [
-        "Calculate current monthly expenses to determine essential spending",
+        "Calculate current monthly expenses to determine essential expenditure",
         "Determine required emergency fund size based on new salary",
-        "Estimate new monthly income after 20% pay cut",
-        "Assess potential impact on long-term financial goals, such as retirement savings",
-        "Create a budget plan to adjust spending and allocate $15,000 in savings for transition support",
-        "Evaluate potential for future salary growth in the new career"
+        "Assess potential impact of 20% pay cut on savings and expenses",
+        "Create a revised budget to accommodate reduced income",
+        "Evaluate strategies to mitigate the pay cut, such as reducing expenses or finding additional income sources",
+        "Develop a plan to replenish emergency fund if used during transition"
       ]
     },
     {
@@ -257,10 +259,10 @@
       "todos": [
         "Gather current financial documents including business income, expenses, and tax returns",
         "Calculate self-employment tax liability and identify potential deductions",
-        "Research and explore business entity structures to minimize tax burden (e.g. S-Corp, LLC)",
-        "Analyze home office deduction and other business use of personal assets",
-        "Investigate retirement plan options for self-employed individuals (e.g. SEP-IRA, Solo 401(k))",
-        "Consult with a tax professional to implement optimized tax strategies"
+        "Research and explore tax-deferred retirement account options, such as SEP-IRA or Solo 401(k)",
+        "Analyze potential business entity structure changes, such as S-Corp or LLC, for tax benefits",
+        "Consult with a tax professional to discuss income splitting, expense categorization, and other optimization strategies",
+        "Implement recommended tax optimization strategies and monitor their impact on tax liability"
       ]
     }
   ]

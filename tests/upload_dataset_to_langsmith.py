@@ -27,7 +27,7 @@ def upload_dataset_to_langsmith():
     
     client = Client()
     
-    dataset_name = "financial-planning-milestone1"
+    dataset_name = "financial-planning-milestone2"
 
     try:
         existing = client.read_dataset(dataset_name=dataset_name)

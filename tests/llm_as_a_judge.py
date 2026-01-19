@@ -42,7 +42,7 @@ def create_evaluator():
     
     judge_llm = ChatGroq(
         model=settings.LLM_MODEL,
-        temperature=0.0, 
+        temperature=0.0,
         groq_api_key=settings.GROQ_API_KEY
     )
     
@@ -102,7 +102,7 @@ def format_todos(todos):
     
     return "\n".join(formatted)
 
-def run_langsmith_evaluation(dataset_name="financial-planning-milestone1"):
+def run_langsmith_evaluation(dataset_name="financial-planning-milestone2"):
     """
     Run evaluation using LangSmith's evaluation framework.
     
@@ -154,7 +154,7 @@ def run_langsmith_evaluation(dataset_name="financial-planning-milestone1"):
             run_agent,
             data=dataset_name,
             evaluators=[evaluator],
-            experiment_prefix="milestone1-judge",
+            experiment_prefix="milestone2-judge",
             description="LLM-as-a-judge evaluation of task planning",
             max_concurrency=1
         )
