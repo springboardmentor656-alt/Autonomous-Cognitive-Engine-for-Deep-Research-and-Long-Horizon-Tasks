@@ -1,4 +1,4 @@
-import os
+rt os
 from dotenv import load_dotenv
 
 from graph.graph import app
@@ -20,15 +20,21 @@ def main():
     print("3 Summaries → Virtual Files → Final Summary")
     print("=" * 60)
 
-    # Take task from user
-    user_task = input("\n👉 Enter your task: ").strip()
+    # Take 3 tasks from user
+    print("\n👉 Enter 3 tasks to process:")
+    tasks = []
+    for i in range(1, 4):
+        t = input(f"   Task {i}: ").strip()
+        if t:
+            tasks.append(t)
+        else:
+            # Fallback if empty
+            tasks.append(f"Task {i}")
 
-    if not user_task:
-        print("❌ Task cannot be empty.")
-        return
+    print(f"\nProcessing tasks: {tasks}")
 
     # Create initial agent state
-    state = create_initial_state(task=user_task)
+    state = create_initial_state(tasks=tasks)
 
     # Invoke LangGraph agent
     # 🔥 This creates a LangSmith RUN
