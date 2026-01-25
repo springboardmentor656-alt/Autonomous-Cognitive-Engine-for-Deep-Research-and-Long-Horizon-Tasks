@@ -1,1 +1,1 @@
-# Autonomous-Cognitive-Engine-for-Deep-Research-and-Long-Horizon-Tasks
+# Autonomous-cognitive-engine-for-deep-research-and-long-horizon-tasks-group-2
