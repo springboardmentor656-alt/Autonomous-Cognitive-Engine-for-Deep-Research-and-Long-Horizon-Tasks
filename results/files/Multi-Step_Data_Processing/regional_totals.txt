@@ -1,0 +1,1 @@
+North: $2000K, South: $1720K, East: $2300K, West: $1840K

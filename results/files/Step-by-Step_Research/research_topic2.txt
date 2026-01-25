@@ -1,0 +1,1 @@
+Blockchain is a distributed ledger technology that enables secure, transparent, and tamper-proof data storage and transfer, allowing for the creation of decentralized networks and applications. This technology has far-reaching implications for industries such as finance, supply chain management, and healthcare, enabling the secure and efficient exchange of data and assets.
