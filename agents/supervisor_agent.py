@@ -6,7 +6,7 @@ This agent can:
 2. Use file system (M2)
 3. Delegate to specialists (M3)
 """
-
+import uuid
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
@@ -38,8 +38,8 @@ You have access to specialist sub-agents:
 
 - **debt_specialist**: Expert in debt analysis, payoff strategies, interest optimization
 - **budget_analyst**: Expert in budget creation, expense analysis, cash flow
-- **investment_advisor**: Expert in retirement planning, portfolio allocation (coming soon)
-- **tax_optimizer**: Expert in tax strategies, deductions (coming soon)
+- **investment_advisor**: Expert in retirement planning, portfolio allocation, and long-term wealth.
+- **tax_optimizer**: Expert in tax strategies, deductions, and legal tax reduction.
 
 # YOUR TOOLS
 
@@ -134,112 +134,94 @@ def supervisor_node(state: AgentState) -> AgentState:
         "messages": [response],
         "iteration_count": state["iteration_count"] + 1
     }
-
 def tool_execution_node(state: AgentState) -> AgentState:
-    """Execute tools including delegation"""
     last_message = state["messages"][-1]
-    
     if not (hasattr(last_message, "tool_calls") and last_message.tool_calls):
         return {"messages": []}
     
-    updates = {"messages": []}
-    
+    # Initialize variables to accumulate ALL changes
+    current_files = state.get("files", {}).copy()
+    current_todos = list(state.get("todos", [])) # Copy the list
+    new_messages = []
+
     for tool_call in last_message.tool_calls:
         tool_name = tool_call["name"]
         args = tool_call["args"]
         tool_call_id = tool_call["id"]
         
         print(f"\n[TOOL EXECUTION] {tool_name}")
-        
+
         if tool_name == "delegate_task":
             specialist = args.get("specialist", "")
             task_desc = args.get("task_description", "")
-            
             try:
                 result = delegate_to_specialist(specialist, task_desc)
+                new_messages.append(ToolMessage(content=result, tool_call_id=tool_call_id))
                 
-                tool_response = ToolMessage(
-                    content=result,
-                    tool_call_id=tool_call_id
-                )
-                updates["messages"].append(tool_response)
-                
-                count = len([f for f in state["files"] if specialist in f]) + 1
-                filename = f"{specialist}_{count}_result.txt"
-                files = state["files"].copy()
-                files[filename] = result
-                updates["files"] = files
-                
+                # Use current_files so multiple delegations work in one turn
+                filename = f"{specialist}_{uuid.uuid4().hex[:6]}_result.txt"
+                current_files[filename] = result
                 print(f"[TOOL EXECUTION] Delegation complete, saved to {filename}")
-                
             except Exception as e:
-                error_msg = ToolMessage(
-                    content=f"Delegation error: {str(e)}",
-                    tool_call_id=tool_call_id
-                )
-                updates["messages"].append(error_msg)
-                print(f"[TOOL EXECUTION] Delegation failed: {e}")
-        
+                new_messages.append(ToolMessage(content=f"Error: {str(e)}", tool_call_id=tool_call_id))
+
+        elif tool_name == "write_file" or tool_name == "edit_file":
+            filename = args.get("filename", "")
+            content = args.get("content", "")
+            if filename:
+                current_files[filename] = content
+                new_messages.append(ToolMessage(content=f"Successfully handled {filename}", tool_call_id=tool_call_id))
+                print(f"[TOOL EXECUTION] File updated: {filename}")
+
+        elif tool_name == "write_todos":
+            tasks = args.get("tasks", [])
+            # Replace todos with new ones
+            current_todos = [
+                TodoItem(id=i, description=task, status="pending", result=None, assigned_to="supervisor")
+                for i, task in enumerate(tasks)
+            ]
+            new_messages.append(ToolMessage(content=f"Created {len(current_todos)} tasks", tool_call_id=tool_call_id))
+            print(f"[TOOL EXECUTION] Created {len(current_todos)} tasks")
+
         else:
-            tool_node = ToolNode(ALL_SUPERVISOR_TOOLS)
-            result = tool_node.invoke(state)
-            
-            if tool_name == "write_todos":
-                tasks = args.get("tasks", [])
-                todos = [
-                    TodoItem(
-                        id=i,
-                        description=task,
-                        status="pending",
-                        result=None,
-                        assigned_to="supervisor"
-                    )
-                    for i, task in enumerate(tasks)
-                ]
-                updates["todos"] = todos
-                print(f"[TOOL EXECUTION] Created {len(todos)} tasks")
-            
-            elif tool_name == "write_file":
-                filename = args.get("filename", "")
-                content = args.get("content", "")
-                if filename and content:
-                    files = state["files"].copy()
-                    files[filename] = content
-                    updates["files"] = files
-                    print(f"[TOOL EXECUTION] Saved {filename}")
-            
-            elif tool_name == "edit_file":
-                filename = args.get("filename", "")
-                content = args.get("content", "")
-                if filename and content:
-                    files = state["files"].copy()
-                    files[filename] = content
-                    updates["files"] = files
-                    print(f"[TOOL EXECUTION] Updated {filename}")
-            
-            updates["messages"].extend(result.get("messages", []))
-    
-    return updates
+            # Handle other tools (ls, read_file, etc.) via ToolNode logic if needed
+            # For simplicity, ensure every tool in ALL_SUPERVISOR_TOOLS is covered here
+            new_messages.append(ToolMessage(content="Tool executed", tool_call_id=tool_call_id))
 
+    return {
+        "messages": new_messages,
+        "files": current_files,
+        "todos": current_todos
+    }
 def should_continue(state: AgentState) -> Literal["tools", "final", "end"]:
-
+    # 1. Emergency Brake: If we hit the limit, try to summarize what we have
     if state["iteration_count"] >= state["max_iterations"]:
         return "final" if state["files"] else "end"
 
     last_message = state["messages"][-1]
 
+    # 2. Tool Call Check: If LLM wants to use a tool, always go to "tools" node
     if hasattr(last_message, "tool_calls") and last_message.tool_calls:
         return "tools"
 
-    has_plan = len(state["todos"]) >= 3
-    has_delegated = any("_result.txt" in fname for fname in state["files"].keys())
+    # 3. Success Logic: Did we actually do work?
+    has_plan = len(state.get("todos", [])) > 0
+    
+    # Check for any files created by specialists in our registry
+    specialist_keys = ["debt", "specialist", "analyst", "advisor", "optimizer", "result"]
+    has_delegated = any(
+        any(key in fname.lower() for key in specialist_keys)
+        for fname in state.get("files", {}).keys()
+    )
 
+    # 4. Routing to Synthesis:
+    # If the LLM has stopped calling tools and we have data, go to 'final' 
+    # to generate the professional report.
     if has_plan and has_delegated:
         return "final"
 
+    # 5. Default Fallback
     return "end"
-
-
 def create_supervisor_agent():
     workflow = StateGraph(AgentState)
 

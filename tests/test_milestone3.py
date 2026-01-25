@@ -8,7 +8,9 @@ This test verifies:
 4. Results are integrated back 
 """
 
+from glob import glob
 import sys
+import glob
 import os
 from pathlib import Path
 from unittest import result
@@ -19,6 +21,20 @@ sys.path.insert(0, str(project_root))
 from config.settings import settings
 from state.agent_state import create_initial_state
 from agents.supervisor_agent import supervisor_agent
+
+def cleanup_old_results():
+    """Delete all .txt files created by previous agent runs."""
+    files = glob.glob("*.txt")
+    for f in files:
+        try:
+            os.remove(f)
+            print(f"Cleaned up: {f}")
+        except OSError:
+            pass
+
+# Run cleanup before tests start
+print("Cleaning environment...")
+cleanup_old_results()
 
 print("=" * 70)
 print("MILESTONE 3: SUB-AGENT DELEGATION TEST")
@@ -51,8 +67,8 @@ I need comprehensive financial help:
 Can you create a complete financial plan?
 """
 
-print("\nTest Query 1: Complex Debt + Budget Scenario")
-print("Expected: Delegation to BOTH debt_specialist AND budget_analyst")
+print("\nTest Query 1: Complex Debt + Budget Scenario + Investment Advice")
+print("Expected: Delegation to BOTH debt_specialist AND budget_analyst AND investment_advisor")
 print("\nRunning supervisor agent...\n")
 
 state_1 = create_initial_state(test_query_1, max_iterations=8)
@@ -190,7 +206,7 @@ print("=" * 70)
 
 print("\nTest 1 Delegations:")
 for filename, content in result_1['files'].items():
-    if 'specialist' in filename or 'analyst' in filename:
+    if any(x in filename for x in ["specialist", "analyst", "advisor", "optimizer"]):
         print(f"\n{filename}:")
         print(f"   Length: {len(content)} characters")
         preview = content[:200] + "..." if len(content) > 200 else content

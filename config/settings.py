@@ -16,7 +16,7 @@ class Settings:
 
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
     LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.3-70b-versatile")
-    LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.1"))
+    LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0"))
 
     MAX_ITERATIONS = int(os.getenv("MAX_ITERATIONS", "15"))
     MAX_TODOS = int(os.getenv("MAX_TODOS", "10"))
