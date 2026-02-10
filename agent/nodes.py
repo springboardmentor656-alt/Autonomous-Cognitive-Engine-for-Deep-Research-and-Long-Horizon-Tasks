@@ -1,7 +1,7 @@
 from langchain_core.prompts import ChatPromptTemplate
 from agent.state import AgentState
-from agent.sub_agents.summarizer import summarization_agent
 from agent.llm import get_llm
+from agent.tools.delegate import delegate_task
 
 
 # ---------------- PLANNER ----------------
@@ -49,7 +49,7 @@ def execute_node(state: AgentState) -> AgentState:
 
     for i, step in enumerate(state.get("todos", []), start=1):
         if "summarize" in step.lower():
-            result = summarization_agent(step)
+            result = delegate_task("summarization", step)
         else:
             result = executor_chain.invoke({"step": step}).content
 
@@ -57,11 +57,10 @@ def execute_node(state: AgentState) -> AgentState:
 
     state["files"] = files
     return state
+
+
 # ---------------- SYNTHESIZER ----------------
-def synthesize_node(state):
-    """
-    Combines all generated files into a single final output
-    """
+def synthesize_node(state: AgentState) -> AgentState:
     files = state.get("files", {})
 
     combined_output = ""
