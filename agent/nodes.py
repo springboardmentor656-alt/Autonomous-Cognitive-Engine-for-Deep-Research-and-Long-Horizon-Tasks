@@ -7,13 +7,28 @@ from agent.tools.delegate import delegate_task
 # ---------------- PLANNER ----------------
 planner_prompt = ChatPromptTemplate.from_template(
     """
-Break the task into a clear ordered TODO list.
-Return one step per line.
+You are an autonomous research agent.
+
+Break the given task into a structured RESEARCH OUTLINE.
+Each line must be a SECTION of a research report, not an action plan.
+Only include sections directly related to the given topic.
+Do NOT introduce unrelated technologies or domains.
+
+
+Use sections such as:
+- Introduction
+- Background / Context
+- Key Concepts
+- Advantages
+- Challenges
+- Applications / Use Cases
+- Conclusion
 
 Task:
 {task}
 """
 )
+
 
 def plan_node(state: AgentState) -> AgentState:
     llm = get_llm()
@@ -34,38 +49,77 @@ def plan_node(state: AgentState) -> AgentState:
 # ---------------- EXECUTOR ----------------
 executor_prompt = ChatPromptTemplate.from_template(
     """
-Execute this step clearly.
+Write a detailed RESEARCH SECTION for the heading below.
 
-Step:
+Guidelines:
+- Use an academic, explanatory tone
+- Explain concepts clearly
+- Do NOT write implementation steps or project plans
+- Do NOT include bullet-point action items
+- Keep it suitable for a research report
+
+Section Heading:
 {step}
 """
 )
+
 
 def execute_node(state: AgentState) -> AgentState:
     llm = get_llm()
     executor_chain = executor_prompt | llm
 
-    files = {}
+    todos = state.get("todos", [])
+    current_step = state.get("current_step", 0)
+    files = state.get("files", {})
 
-    for i, step in enumerate(state.get("todos", []), start=1):
-        if "summarize" in step.lower():
-            result = delegate_task("summarization", step)
-        else:
-            result = executor_chain.invoke({"step": step}).content
+    print("EXECUTE → current_step:", current_step)
 
-        files[f"step_{i}.txt"] = result
+    if current_step < len(todos):
+        step = todos[current_step]
+        result = executor_chain.invoke({"step": step}).content
 
-    state["files"] = files
+        files[f"step_{current_step+1}.txt"] = result
+        state["files"] = files
+        state["current_step"] = current_step + 1
+
+        print("EXECUTE → incremented to:", state["current_step"])
+
     return state
+
+
+
 
 
 # ---------------- SYNTHESIZER ----------------
 def synthesize_node(state: AgentState) -> AgentState:
     files = state.get("files", {})
 
-    combined_output = ""
-    for name, content in files.items():
-        combined_output += f"\n\n{name}:\n{content}"
+    final_report = "# Final Research Report\n\n"
 
-    state["final_output"] = combined_output.strip()
+    for name, content in files.items():
+        final_report += f"\n\n## {name}\n{content}"
+
+    state["files"]["final_report.md"] = final_report
+    state["final_output"] = final_report
+
     return state
+
+
+def orchestrator_node(state: AgentState) -> AgentState:
+    todos = state.get("todos", [])
+    current_step = state.get("current_step", 0)
+
+    print("DEBUG → current_step:", current_step)
+    print("DEBUG → total todos:", len(todos))
+
+    if current_step >= len(todos):
+        print("DEBUG → Moving to SYNTHESIZE")
+        state["next_action"] = "synthesize"
+    else:
+        print("DEBUG → Moving to EXECUTE")
+        state["next_action"] = "execute"
+
+    return state
+
+
+
