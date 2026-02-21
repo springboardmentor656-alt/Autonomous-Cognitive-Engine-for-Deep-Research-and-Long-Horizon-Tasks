@@ -1,11 +1,3 @@
-"""
-Milestone 3: Supervisor Agent with Sub-Agent Delegation
-
-This agent can:
-1. Create task plans (M1)
-2. Use file system (M2)
-3. Delegate to specialists (M3)
-"""
 import uuid
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, END
