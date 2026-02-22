@@ -11,7 +11,7 @@ prompt = PromptTemplate(
     template="""
 You are an expert AI task planner.
 
-Break the following task into 5–7 clear, meaningful subtasks.
+Break the following task into 5–7 meaningful subtasks.
 
 Task:
 {task}
@@ -20,13 +20,16 @@ Return ONLY a numbered list.
 """
 )
 
+
 def write_todos(task: str):
     response = llm.invoke(prompt.format(task=task))
     lines = response.content.strip().split("\n")
 
     todos = []
     for line in lines:
-        if line.strip() and line.strip()[0].isdigit():
-            todos.append(line.strip())
+        line = line.strip()
+        if line and line[0].isdigit():
+            clean = line.split(".", 1)[1].strip()
+            todos.append(clean)
 
     return todos

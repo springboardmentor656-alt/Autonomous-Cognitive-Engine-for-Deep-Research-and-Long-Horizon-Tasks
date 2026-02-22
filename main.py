@@ -1,25 +1,18 @@
-# main.py
 from dotenv import load_dotenv
 load_dotenv()
 
-from agent.supervisor import run_tasks  # ✅ Import after adding supervisor.py to same directory
+from agent.supervisor import run_tasks
 
 def main():
-    tasks = []
 
-    # Prompt user for complex tasks
-    while True:
-        task = input("Enter a complex task (or press Enter to finish): ")
-        if not task.strip():
-            break
-        tasks.append(task)
+    task = input("Enter a complex task: ").strip()
 
-    if not tasks:
-        print("No tasks provided.")
+    if not task:
+        print("No task provided.")
         return
 
-    # Run the supervisor
-    run_tasks(tasks)
+    run_tasks(task)
+
 
 if __name__ == "__main__":
     main()

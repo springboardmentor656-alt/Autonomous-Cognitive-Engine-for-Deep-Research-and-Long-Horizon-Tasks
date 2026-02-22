@@ -1,6 +1,13 @@
-from typing import TypedDict, List, Dict
+from typing import TypedDict, List, Optional
+
 
 class AgentState(TypedDict):
-    messages: List[dict]       # Stores user input messages
-    todos: Dict[str, List[str]]  # Stores todos per task
-    files: Dict[str, str]       # Virtual File System (VFS)
+    task: str
+    todos: List[str]
+    current_index: int
+    delegated_results: List[str]
+    current_todo: Optional[str]
+    next_step: Optional[str]
+    final_output: str
+    evaluation: str
+    execution_time: float
