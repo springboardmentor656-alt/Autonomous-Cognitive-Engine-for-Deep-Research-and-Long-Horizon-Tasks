@@ -17,7 +17,7 @@ Produce a structured research report
 
 The goal is to build an AI system that can handle complex, multi-step reasoning tasks rather than simple question-answering.
 
-🎯 Project Objectives
+###🎯 Project Objectives
 
 Build a multi-agent cognitive system for deep research tasks
 
@@ -29,12 +29,12 @@ Evaluate the agent’s performance on real research prompts
 
 Measure task completion and output quality
 
-🏗️ System Architecture
+###🏗️ System Architecture
 
 The project follows a modular cognitive-agent design.
 
 🧩 Core Components
-1️⃣ Planner Agent
+#####1️⃣ Planner Agent
 
 Breaks user requests into structured steps
 
@@ -42,7 +42,7 @@ Generates an actionable research plan
 
 Stores tasks in memory
 
-2️⃣ Execution Agent
+#####2️⃣ Execution Agent
 
 Performs each step of the plan
 
@@ -50,25 +50,25 @@ Uses tools like summarization and file reading
 
 Updates the working state
 
-3️⃣ Summarization Agent
+#####3️⃣ Summarization Agent
 
 Converts gathered information into structured text
 
 Produces coherent research content
 
-4️⃣ Final Answer Generator
+#####4️⃣ Final Answer Generator
 
 Combines all outputs
 
 Produces a full research report
 
-5️⃣ File System Memory
+#####5️⃣ File System Memory
 
 Saves notes, summaries, and todo lists
 
 Allows long-horizon reasoning across steps
 
-🧠 Agent Workflow
+###🧠 Agent Workflow
 
 User submits a research prompt
 
@@ -82,7 +82,7 @@ Summaries are generated
 
 Final research report is produced
 
-📂 Project Structure
+####📂 Project Structure
 agent/                  # Core agent logic
 tools/                  # Utility tools (file IO, summarization, tasks)
 main.py                 # Entry point to run the agent
@@ -90,8 +90,8 @@ run_milestone2_experiment.py   # Evaluation runner script
 milestone4/             # Evaluation results and documentation
 README.md
 
-📊 Milestone Implementation
-✅ Milestone 1 – Basic Agent Setup
+###📊 Milestone Implementation
+#####✅ Milestone 1 – Basic Agent Setup
 
 Implemented initial cognitive workflow
 
@@ -99,7 +99,7 @@ Built planner, execution, and summarization agents
 
 Enabled report generation
 
-✅ Milestone 2 – Tool Integration
+#####✅ Milestone 2 – Tool Integration
 
 Added file-based memory system
 
@@ -109,7 +109,7 @@ Enabled multi-step task execution
 
 Added LangSmith tracing for debugging
 
-✅ Milestone 3 – Long-Horizon Task Support
+#####✅ Milestone 3 – Long-Horizon Task Support
 
 Improved planning logic
 
@@ -119,8 +119,8 @@ Added structured report generation
 
 Improved prompt design
 
-✅ Milestone 4 – Evaluation & Performance Analysis
-🎯 Goal
+#####✅ Milestone 4 – Evaluation & Performance Analysis
+######🎯 Goal
 
 Evaluate whether the agent can:
 
@@ -128,7 +128,7 @@ Complete end-to-end research tasks
 
 Produce useful and structured outputs
 
-🛠️ Evaluation Method
+###🛠️ Evaluation Method
 
 The agent was tested on multiple research prompts representing real-world tasks.
 
@@ -142,7 +142,7 @@ Output Quality
 
 Judged using an LLM-as-a-Judge approach
 
-🤖 LLM-Based Evaluation
+###🤖 LLM-Based Evaluation
 
 Instead of Gemini API, this project uses:
 
@@ -166,7 +166,7 @@ Structure
 
 Usefulness
 
-📊 Results Summary
+###📊 Results Summary
 
 Average score across tasks: ~7+
 
@@ -176,7 +176,7 @@ Outputs structured and coherent
 
 System demonstrates reliable research-generation ability
 
-🔍 Technologies Used
+###🔍 Technologies Used
 
 Python
 
@@ -190,7 +190,7 @@ LangSmith (Tracing & evaluation)
 
 File-based memory system
 
-💡 Key Features
+###💡 Key Features
 
 ✔ Autonomous multi-step reasoning
 ✔ File-based persistent memory
@@ -199,7 +199,7 @@ File-based memory system
 ✔ Local LLM evaluation support
 ✔ LangSmith tracing integration
 
-🎓 Learning Outcomes
+###🎓 Learning Outcomes
 
 Through this project, we demonstrated:
 
