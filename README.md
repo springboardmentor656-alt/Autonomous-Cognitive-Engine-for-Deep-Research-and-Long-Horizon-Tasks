@@ -1,5 +1,5 @@
 # Autonomous-Cognitive-Engine-for-Deep-Research-and-Long-Horizon-Tasks
-📌 Project Overview
+### 📌 Project Overview
 
 This project implements an Autonomous AI Research Agent capable of planning, executing, and generating long-form research outputs with minimal human intervention.
 
