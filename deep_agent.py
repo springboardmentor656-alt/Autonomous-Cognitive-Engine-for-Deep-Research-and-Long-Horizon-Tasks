@@ -1,15 +1,33 @@
-from planner import write_todos
-from tools.delegate_task import delegate_task
+from langgraph.graph import StateGraph, END
+from planner import planning_node
+from orchestrator import orchestrator_node
+from tools.executor import executor_node
+from finalizer import finalize_report
 
-def build_deep_agent(user_task: str):
-    todos = write_todos(user_task)
-    results = []
 
-    for todo in todos:
-        if "Summarize" in todo or "Research" in todo:
-            result = delegate_task(todo)
-            results.append(result)
-        else:
-            results.append(f"Handled internally: {todo}")
+def build_master_agent():
 
-    return results
+    graph = StateGraph(dict)
+
+    graph.add_node("planning", planning_node)
+    graph.add_node("orchestrator", orchestrator_node)
+    graph.add_node("executor", executor_node)
+    graph.add_node("finalizer", finalize_report)
+
+    graph.set_entry_point("planning")
+
+    graph.add_edge("planning", "orchestrator")
+
+    graph.add_conditional_edges(
+        "orchestrator",
+        lambda state: state["next_action"],
+        {
+            "execute": "executor",
+            "finalize": "finalizer"
+        }
+    )
+
+    graph.add_edge("executor", "orchestrator")
+    graph.add_edge("finalizer", END)
+
+    return graph.compile()

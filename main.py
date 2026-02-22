@@ -3,28 +3,25 @@ load_dotenv()
 
 import os
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_PROJECT"] = "milestone3-sub-agent"
+os.environ["LANGCHAIN_PROJECT"] = "milestone4-master-architect"
 
-from deep_agent import build_deep_agent
-from Evaluation.delegation_evaluator import evaluate_delegation
+from agent_state import default_state
+from deep_agent import build_master_agent
+from evaluation.reviewer import review_report
 
 
 if __name__ == "__main__":
-    task = input("Enter your task: ")
 
-    results = build_deep_agent(task)
+    task = input("Enter complex research goal: ")
 
-    print("\n================ FINAL RESULTS ================\n")
+    agent = build_master_agent()
 
-    for i, item in enumerate(results, 1):
-        print(f"{i}. Output:")
-        print(item)
-        print("-" * 60)
+    state = default_state(task)
 
-    # ---------- EVALUATION ----------
-    metrics = evaluate_delegation(results)
+    result = agent.invoke(state)
 
-    print("\n========= EVALUATION =========")
-    print(f"Total Tasks: {metrics['total_tasks']}")
-    print(f"Delegated Tasks: {metrics['successful_delegations']}")
-    print(f"Delegation Accuracy: {metrics['delegation_accuracy'] * 100:.2f}%")
+    print("\n===== FINAL REPORT =====\n")
+    print(result["final_report"])
+
+    print("\n===== REVIEW =====\n")
+    print(review_report(result["final_report"]))
