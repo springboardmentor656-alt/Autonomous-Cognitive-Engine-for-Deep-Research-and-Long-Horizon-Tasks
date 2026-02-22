@@ -83,12 +83,13 @@ Summaries are generated
 Final research report is produced
 
 #### 📂 Project Structure
-agent/                  # Core agent logic
-tools/                  # Utility tools (file IO, summarization, tasks)
-main.py                 # Entry point to run the agent
-run_milestone2_experiment.py   # Evaluation runner script
-milestone4/             # Evaluation results and documentation
-README.md
+.
+├── agent/                      # Core cognitive agent logic
+├── tools/                      # File handling, summarization, task utilities
+├── main.py                     # Entry point to run the agent
+├── run_milestone2_experiment.py # Evaluation & LangSmith experiment runner
+├── milestone4/                 # Evaluation outputs, screenshots, notes
+└── README.md                   # Project documentation
 
 ### 📊 Milestone Implementation
 ##### ✅ Milestone 1 – Basic Agent Setup
