@@ -1,0 +1,402 @@
+[
+  [
+    "Conduct a deep dive into renewable energy trends in India and draft an executive summary for policymakers.",
+    [
+      {
+        "id": 1,
+        "description": "Research current renewable energy policies in India",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Gather data on India's renewable energy production and consumption trends",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Identify key players in India's renewable energy sector (government agencies, companies, etc.)",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Analyze the impact of government incentives and subsidies on renewable energy adoption in India",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Review existing literature on renewable energy trends in India (academic papers, reports, etc.)",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Compile a list of potential interviewees for the project (experts, industry leaders, etc.)",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Draft an outline for the executive summary",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Research the impact of 2026 carbon taxes on European manufacturing and draft a risk assessment.",
+    [
+      {
+        "id": 1,
+        "description": "Research current European manufacturing industry structure and key players.",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Gather information on existing carbon tax policies in Europe and their impact on manufacturing.",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Identify potential carbon tax rates for 2026 and their projected impact on European manufacturing costs.",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Analyze the potential effects of 2026 carbon taxes on European manufacturing competitiveness and trade.",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Research potential strategies for European manufacturers to mitigate the impact of 2026 carbon taxes.",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Draft a preliminary risk assessment framework for the impact of 2026 carbon taxes on European manufacturing.",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Compile and organize research findings into a comprehensive report.",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Design a roadmap for adopting AI copilots in a mid-sized IT services company over the next 3 years.",
+    [
+      {
+        "id": 1,
+        "description": "Conduct a company-wide survey to assess current pain points and areas where AI copilots can provide the most value.",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Research and shortlist AI copilot vendors that align with the company's goals and budget.",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Develop a business case for adopting AI copilots, including estimated costs, benefits, and ROI projections.",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Identify and prioritize key departments and teams that will benefit the most from AI copilots, such as customer support or IT operations.",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Create a high-level implementation plan, including timelines, milestones, and resource allocation for the next 3 years.",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Develop a training program for employees on how to effectively work with AI copilots, including data preparation, model selection, and integration.",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Establish a governance framework for AI copilot adoption, including data security, ethics, and compliance considerations.",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Analyze trends in EV battery recycling technologies and identify top 5 business opportunities.",
+    [
+      {
+        "id": 1,
+        "description": "Research current EV battery recycling technologies and their market adoption rates.",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Identify key players in the EV battery recycling industry and their business models.",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Analyze the current recycling processes for EV batteries and their environmental impact.",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Gather information on the economic viability of EV battery recycling and its potential for growth.",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Research government regulations and incentives for EV battery recycling in major markets.",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Identify potential business opportunities in EV battery recycling, such as recycling facilities or technology development.",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Prioritize the top 5 business opportunities in EV battery recycling based on market potential and feasibility.",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Study global data privacy regulations and propose a compliance checklist for a SaaS startup.",
+    [
+      {
+        "id": 1,
+        "description": "Research global data privacy regulations (GDPR, CCPA, HIPAA, etc.)",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Identify key similarities and differences between global data privacy regulations",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Create a list of data privacy requirements for a SaaS startup (e.g. data encryption, consent, breach notification)",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Research industry-specific data privacy regulations (e.g. healthcare, finance, education)",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Develop a compliance checklist for data collection and storage",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Develop a compliance checklist for data transfer and sharing",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Develop a compliance checklist for data breach response and notification",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Evaluate the risks and benefits of using generative AI for customer support in banking.",
+    [
+      {
+        "id": 1,
+        "description": "Research current state of generative AI in customer support",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Identify potential benefits of using generative AI in banking customer support",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Gather industry reports and studies on AI adoption in banking",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Analyze existing customer support systems in banking and identify pain points",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Research potential risks and challenges associated with generative AI in customer support",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Evaluate the feasibility of integrating generative AI with existing banking systems",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Develop a preliminary risk-benefit analysis framework for generative AI in banking customer support",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Research green logistics strategies for e-commerce companies in Southeast Asia.",
+    [
+      {
+        "id": 1,
+        "description": "Research current e-commerce trends in Southeast Asia",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Identify key players in the e-commerce industry in Southeast Asia",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Gather information on existing green logistics strategies in Southeast Asia",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Analyze the impact of e-commerce growth on environmental sustainability in Southeast Asia",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Research case studies of e-commerce companies implementing green logistics in Southeast Asia",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Compile a list of potential green logistics strategies for e-commerce companies in Southeast Asia",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Create a preliminary report outlining the key findings and recommendations",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Investigate cybersecurity threats for remote work infrastructures and draft a mitigation plan.",
+    [
+      {
+        "id": 1,
+        "description": "Research common cybersecurity threats for remote work infrastructures",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Identify vulnerabilities in popular remote work platforms (e.g. Zoom, Slack, Google Workspace)",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Analyze recent data breaches and cyber attacks targeting remote work infrastructures",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Gather information on best practices for securing remote work networks and devices",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Develop a list of recommended security measures for remote work infrastructures",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Create a risk assessment template for evaluating remote work infrastructure security",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Draft a mitigation plan for common cybersecurity threats in remote work infrastructures",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Explore opportunities for AI-powered education tools in Indian higher education.",
+    [
+      {
+        "id": 1,
+        "description": "Research current AI-powered education tools in Indian higher education",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Identify key stakeholders in Indian higher education (universities, government bodies, etc.)",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Analyze existing literature on AI-powered education tools in Indian higher education",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Reach out to Indian universities to gather information on their current use of AI-powered education tools",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Explore government initiatives and policies related to AI-powered education in India",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Compile a list of potential AI-powered education tools that could be adapted for Indian higher education",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Create a preliminary report on the opportunities and challenges of implementing AI-powered education tools in Indian higher education",
+        "status": "pending"
+      }
+    ]
+  ],
+  [
+    "Assess the business impact of quantum computing advances over the next decade.",
+    [
+      {
+        "id": 1,
+        "description": "Research current state of quantum computing advancements and identify key players in the industry.",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "description": "Gather industry reports and forecasts on the expected impact of quantum computing on various sectors (e.g., finance, healthcare, energy).",
+        "status": "pending"
+      },
+      {
+        "id": 3,
+        "description": "Analyze the current patent landscape related to quantum computing and identify potential areas of innovation.",
+        "status": "pending"
+      },
+      {
+        "id": 4,
+        "description": "Conduct a literature review on the potential business applications of quantum computing, including cryptography, optimization, and machine learning.",
+        "status": "pending"
+      },
+      {
+        "id": 5,
+        "description": "Identify potential use cases for quantum computing in the next decade and estimate their potential business impact.",
+        "status": "pending"
+      },
+      {
+        "id": 6,
+        "description": "Research the current state of quantum computing adoption in various industries and identify potential barriers to adoption.",
+        "status": "pending"
+      },
+      {
+        "id": 7,
+        "description": "Create a preliminary outline for a report on the business impact of quantum computing advances over the next decade.",
+        "status": "pending"
+      }
+    ]
+  ]
+]
