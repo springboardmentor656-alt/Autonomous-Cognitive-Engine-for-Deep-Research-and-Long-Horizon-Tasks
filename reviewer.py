@@ -2,7 +2,7 @@ import os
 from langchain_groq import ChatGroq
 
 # Setup the Judge using a powerful model [cite: 43, 61]
-G_KEY = "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"
+G_KEY = "Grok_API_Key"
 judge_llm = ChatGroq(model="llama-3.3-70b-versatile", groq_api_key=G_KEY)
 
 def evaluate_report():
@@ -41,4 +41,5 @@ def evaluate_report():
     print("\n✅ Evaluation results saved to 'evaluation_results.txt'")
 
 if __name__ == "__main__":
+
     evaluate_report()
