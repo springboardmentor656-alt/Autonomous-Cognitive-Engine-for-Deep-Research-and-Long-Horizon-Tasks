@@ -1,0 +1,30 @@
+autonomous_cognitive_engine/
+├── data/                       # Stores intermediate research & virtual files (M2) [cite: 87, 88]
+├── src/
+│   ├── graph/                  # Core Orchestration (M4) 
+│   │   ├── __init__.py
+│   │   ├── state.py            # Unified State: messages, todos, files, sub_agent_results 
+│   │   └── workflow.py         # Master StateGraph (The Orchestrator) [cite: 41, 117]
+│   ├── nodes/                  # The "Brain" Components
+│   │   ├── __init__.py
+│   │   ├── planner.py          # Strategic Planning & TODOs (M1) [cite: 70, 76]
+│   │   ├── orchestrator.py     # Decision logic for next action (M4)
+│   │   ├── writer.py           # Synthesis & Context Offloading (M2/M4) [cite: 115, 119]
+│   │   └── reflector.py        # Internal self-critique logic (M4) [cite: 120]
+│   ├── sub_agents/             # Specialized Workers (M3) [cite: 100, 103]
+│   │   ├── __init__.py
+│   │   ├── researcher.py       # Deep dive search agent
+│   │   └── summarizer.py       # Context condensation agent
+│   ├── tools/                  # Function calling capabilities [cite: 35]
+│   │   ├── __init__.py
+│   │   ├── planning.py         # write_todos tool [cite: 47]
+│   │   ├── file_system.py      # Virtual File System: ls, read, write, edit [cite: 48]
+│   │   └── delegation.py       # Sub-agent delegation tool [cite: 49]
+│   └── utils/
+│       └── prompts.py          # Operational Rules & System Prompts 
+├── main.py                     # Entry Point: Runs the Research Agent (M4) [cite: 113, 119]
+├── reviewer.py                 # Task 4: Separate "LLM-as-a-Judge" script
+├── final_report.md             # The generated output (Autonomous Research) [cite: 123]
+├── evaluation_results.txt      # Professional grading (1-5 Rubric)
+├── .env                        # API Keys (Groq, Tavily, LangSmith) [cite: 67, 74]
+└── pyproject.toml              # Dependency management (uv) [cite: 66, 74]
