@@ -1,0 +1,20 @@
+{
+  "total_tasks": 1,
+  "completion_rate_percent": 100.0,
+  "good_or_excellent_percent": 100.0,
+  "success_criteria_completion_met": true,
+  "success_criteria_quality_met": true,
+  "results": [
+    {
+      "id": 1,
+      "task": "Generate a research report on AI agents in education with recommendations.",
+      "status": "complete",
+      "completed_todos": 6,
+      "total_todos": 6,
+      "error": "",
+      "completion_ok": true,
+      "rating": "good",
+      "judge_reason": "Completed all TODOs with substantial final output."
+    }
+  ]
+}

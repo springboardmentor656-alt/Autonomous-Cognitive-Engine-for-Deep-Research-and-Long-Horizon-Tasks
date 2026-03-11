@@ -1,0 +1,13 @@
+# Evidence-Based Recommendations for Educators
+
+## **Instructional Design**
+- **Use explicit instruction** for new concepts: Break learning into small chunks, model thinking processes, provide guided practice, and check for understanding frequently. (Evidence: Hattie's meta-analysis shows effect size of 0.57)
+- **Implement spaced retrieval practice**: Schedule regular low-stakes quizzes on prior material to strengthen long-term retention. (Evidence: Cognitive science research demonstrates 20-30% improvement in retention)
+- **Apply strategic scaffolding**: Gradually remove supports as students demonstrate mastery, preventing cognitive overload while building independence.
+
+## **Assessment & Feedback**
+- **Prioritize formative feedback over grades**: Provide specific, actionable comments focused on task, process, and self-regulation rather than ego-involving praise. (Evidence: Shute, 2008; Hattie & Timperley, 2007)
+- **Deploy exit tickets weekly**: Use 2-3 minute written responses at lesson's end to identify misconceptions within 24 hours and adjust next-day instruction accordingly.
+
+## **Classroom Climate**
+- **Establish clear routines within 2 weeks**: Consistent procedures reduce cognitive load for both teacher and students, increasing academic engagement

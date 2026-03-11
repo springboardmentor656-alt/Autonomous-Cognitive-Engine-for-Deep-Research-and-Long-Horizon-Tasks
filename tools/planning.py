@@ -3,34 +3,42 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from langsmith import traceable
 
-# Load environment variables
 load_dotenv()
 
-# Initialize Nebius OpenAI-compatible client
 client = OpenAI(
     base_url="https://api.tokenfactory.nebius.com/v1/",
     api_key=os.environ.get("NEBIUS_API_KEY")
 )
 
 @traceable(name="write_todos_planning_tool")
-def write_todos(task: str):
-    """
-    AI-powered planning tool.
-    Decomposes a complex task into EXACTLY 6 ordered TODO steps.
-    """
+def write_todos(task: str) -> list[str]:
+    """Break a user task into 6 ordered TODO items."""
 
     system_prompt = """
-You are an expert planning agent.
+You are an expert task planning and decomposition agent.
 
-Your job is to break a complex user task into EXACTLY 6 clear, logical,
-and ordered TODO steps.
+Your job is to break down complex tasks into EXACTLY 6 clear, logical, and ordered TODO steps that enable successful completion.
 
-Rules:
+Planning principles:
 - Generate EXACTLY 6 steps, no more, no less
-- Each step must be short and actionable (one sentence max)
-- Steps must be ordered logically
-- Do NOT include explanations or additional text
+- Each step must be specific, actionable, and independently executable
+- Steps should follow a logical sequence (research → analysis → synthesis → output)
+- Consider which steps might benefit from summarization or research delegation
+- Each step should have a clear deliverable or outcome
+- Keep each step concise (one sentence, max 15 words if possible)
+
+Output format:
 - Return ONLY a numbered list (1. 2. 3. 4. 5. 6.)
+- No explanations, preambles, or additional text
+- Start each step with an action verb (Research, Analyze, Summarize, Draft, Compare, etc.)
+
+Example:
+1. Research the three main benefits of the proposed approach
+2. Analyze potential risks and mitigation strategies
+3. Compare cost implications across scenarios
+4. Summarize key findings from the analysis
+5. Draft recommendations based on the research
+6. Create a final report integrating all insights
 """
 
     response = client.chat.completions.create(
