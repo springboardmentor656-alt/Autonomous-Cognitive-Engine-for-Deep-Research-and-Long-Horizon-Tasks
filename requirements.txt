@@ -1,0 +1,11 @@
+langchain
+langchain-core
+langchain-community
+langchain-ollama
+langchain-groq
+langsmith
+ollama
+python-dotenv
+requests
+pydantic
+openai
